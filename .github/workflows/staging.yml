@@ -19,7 +19,7 @@ jobs:
       - name: Build and push frontend image
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./server
           file: ./server/Dockerfile
           push: true
           tags: nessimntambi/hostelmanagementapi:dev
@@ -30,7 +30,7 @@ jobs:
       - name: Build and push api image
         uses: docker/build-push-action@v2
         with:
-            context: .
+            context: ./client
             file: ./client/Dockerfile
             push: true
             tags: nessimntambi/hostelmanagement:dev
